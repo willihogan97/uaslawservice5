@@ -22,7 +22,7 @@ def sendTime(request):
 		print("Jam : " + ts)
 		channel.basic_publish(exchange=exchange,
 							  routing_key='waktuServer',
-							  body=ts)
+							  body="Jam : " + ts)
 		time.sleep(1)
 	connection.close()
 	return JsonResponse({"status": "ok"})
